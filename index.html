@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA & Études : Vos Super-Pouvoirs Numériques</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Home Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">IA & Études : Vos Super-Pouvoirs Numériques</h1>
+                <p class="hero-subtitle">Découvrez les outils d'intelligence artificielle qui révolutionnent l'apprentissage et boostent votre réussite académique</p>
+                <button class="btn btn--primary btn--lg discover-btn">
+                    Découvrir les outils ✨
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="tools-section hidden">
+        <div class="container">
+            <header class="tools-header">
+                <h2>Explorez vos outils IA</h2>
+                <nav class="breadcrumb">
+                    <button class="breadcrumb-btn" onclick="showSection('home')">Accueil</button>
+                    <span>></span>
+                    <span>Outils</span>
+                </nav>
+            </header>
+
+            <div class="tools-controls">
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="form-control" placeholder="🔍 Rechercher un outil...">
+                </div>
+                
+                <div class="filter-container">
+                    <select id="categoryFilter" class="form-control">
+                        <option value="">Toutes les catégories</option>
+                        <option value="Rédaction & Correction">Rédaction & Correction</option>
+                        <option value="Recherche & Documentation">Recherche & Documentation</option>
+                        <option value="Apprentissage & Révision">Apprentissage & Révision</option>
+                        <option value="Outils Spécialisés">Outils Spécialisés</option>
+                        <option value="Productivité">Productivité</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="toolsGrid" class="tools-grid">
+                <!-- Tools will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="navbar-brand">
+                    <span class="brand-icon">🤖</span>
+                    <span class="brand-text">IA Étudiants</span>
+                </div>
+                <div class="navbar-menu">
+                    <button class="nav-btn" onclick="showSection('home')">Accueil</button>
+                    <button class="nav-btn" onclick="showSection('tools')">Outils</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tool Modal -->
+    <div id="toolModal" class="modal hidden">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle"></h3>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="tool-icon-large" id="modalIcon"></div>
+                <div class="tool-category" id="modalCategory"></div>
+                <p id="modalDescription"></p>
+                
+                <div class="modal-section">
+                    <h4>🎥 Démonstration</h4>
+                    <div id="modalVideo" class="video-container"></div>
+                </div>
+                
+                <div class="modal-section">
+                    <h4>🎯 Cas d'usage</h4>
+                    <ul id="modalUseCases"></ul>
+                </div>
+                
+                <div class="modal-section">
+                    <h4>✨ Avantages</h4>
+                    <ul id="modalAdvantages"></ul>
+                </div>
+
+                <div class="modal-section">
+                    <h4>📝 Points à présenter</h4>
+                    <ul id="modalPresentation"></ul>
+                </div>
+
+                <div class="modal-section">
+                    <h4>🎬 Scénarios de démo</h4>
+                    <ul id="modalDemo"></ul>
+                </div>
+
+                <div class="modal-section">
+                    <h4>❓ Questions fréquentes</h4>
+                    <ul id="modalFaq"></ul>
+                </div>
+
+                <div class="modal-section">
+                    <h4>📊 Niveau de difficulté</h4>
+                    <div id="modalDifficulty"></div>
+                </div>
+
+                <div class="modal-section">
+                    <h4>🔄 Alternatives</h4>
+                    <ul id="modalAlternatives"></ul>
+                </div>
+
+                <div class="modal-section">
+                    <h4>📚 Ressources d'apprentissage</h4>
+                    <ul id="modalLearningResources"></ul>
+                </div>
+
+                <div class="modal-section">
+                    <h4>💡 Conseils d'utilisation</h4>
+                    <ul id="modalTips"></ul>
+                </div>
+
+                <div class="modal-section">
+                    <h4>🔌 Intégrations</h4>
+                    <ul id="modalIntegrations"></ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--outline" onclick="closeModal()">Fermer</button>
+                <a id="modalLink" href="#" target="_blank" class="btn btn--primary">
+                    Visiter l'outil
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Demo Mode Toggle -->
+    <div class="demo-toggle">
+        <button id="demoModeBtn" class="btn btn--sm btn--outline">
+            Mode Démo
+        </button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
