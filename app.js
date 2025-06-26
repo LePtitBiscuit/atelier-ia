@@ -900,10 +900,17 @@ function showSection(sectionName) {
 }
 
 function incrementView(toolId) {
+  if (!appState.views) appState.views = {};
   if (!appState.views[toolId]) {
     appState.views[toolId] = 0;
   }
   appState.views[toolId]++;
+  saveViews();
+}
+
+function getViewCount(toolId) {
+  if (!appState.views) return 0;
+  return appState.views[toolId] || 0;
 }
 
 function isFavorite(toolId) {
@@ -912,18 +919,16 @@ function isFavorite(toolId) {
 
 function toggleFavorite() {
   if (!appState.currentTool) return;
-  
   const toolId = appState.currentTool.id;
   const favoriteIndex = appState.favorites.indexOf(toolId);
-  
   if (favoriteIndex === -1) {
     appState.favorites.push(toolId);
   } else {
     appState.favorites.splice(favoriteIndex, 1);
   }
-  
+  saveFavorites();
   updateFavoriteButton();
-  renderTools(); // Re-render pour mettre à jour les badges
+  renderTools();
 }
 
 function updateFavoriteButton() {
@@ -952,17 +957,22 @@ function createToolCard(tool) {
   card.className = 'card tool-card';
   card.onclick = () => openToolModal(tool);
 
+  // Badge favoris et vues
+  const isFav = isFavorite(tool.id);
+  const views = getViewCount(tool.id);
+
   card.innerHTML = `
     <div class="card__body tool-card__body">
       <div class="tool-header">
         <div class="tool-icon">${tool.icon}</div>
         <h3 class="tool-name">${tool.name}</h3>
       </div>
-      
       <div class="tool-category">${tool.category}</div>
-      
       <p class="tool-description">${tool.description}</p>
-      
+      <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+        <span class="badge badge--views">${views} vues</span>
+        ${isFav ? '<span class="badge badge--favorite">❤️ Favori</span>' : ''}
+      </div>
       <div style="margin-top: auto;">
         <button class="btn btn--primary btn--sm tool-btn">Découvrir</button>
       </div>
@@ -982,6 +992,8 @@ function openToolModal(tool) {
   const modalVideo = document.getElementById('modalVideo');
   const modalLink = document.getElementById('modalLink');
   const modalContent = modal.querySelector('.modal-content');
+  const modalViews = document.getElementById('modalViews');
+  const favoriteText = document.getElementById('favoriteText');
 
   // Clear previous content
   modalVideo.innerHTML = '';
@@ -990,8 +1002,17 @@ function openToolModal(tool) {
   modalTitle.textContent = tool.name;
   modalIcon.textContent = tool.icon;
   modalCategory.textContent = tool.category;
-  modalDescription.textContent = tool.description;
+  // Texte de présentation orienté découverte
+  modalDescription.innerHTML = `<strong>Découvre ${tool.name}</strong> : ${tool.description}<br><em>Un outil IA pensé pour les étudiants, afin de faciliter : ${tool.useCases.join(', ')}.</em>`;
   modalLink.href = tool.link;
+
+  // Compteur de vues
+  incrementView(tool.id);
+  modalViews.textContent = `${getViewCount(tool.id)} vues`;
+
+  // Favoris
+  appState.currentTool = tool;
+  updateFavoriteButton();
 
   // Handle video/gif if present
   if (tool.video) {
@@ -1050,28 +1071,24 @@ function openToolModal(tool) {
     advantagesList.appendChild(li);
   });
 
-  // Points de présentation
+  // Points forts de l'outil (anciennement Points à présenter)
   const presentationList = document.getElementById('modalPresentation');
   if (presentationList) {
     presentationList.innerHTML = '';
     tool.presentationPoints.forEach(point => {
       const li = document.createElement('li');
-      li.textContent = point;
+      li.textContent = `• ${point}`;
       presentationList.appendChild(li);
     });
   }
 
-  // Scénarios de démo
+  // Exemples d'utilisation concrets (anciennement Scénarios de démo)
   const demoList = document.getElementById('modalDemo');
   if (demoList) {
     demoList.innerHTML = '';
     tool.demoScenarios.forEach(scenario => {
       const li = document.createElement('li');
-      li.innerHTML = `
-        <strong>${scenario.title}</strong><br>
-        <em>Prompt: "${scenario.prompt}"</em><br>
-        Points clés: ${scenario.keyPoints.join(', ')}
-      `;
+      li.innerHTML = `<strong>Exemple : ${scenario.title}</strong> — <em>${scenario.prompt}</em><br>Points clés : ${scenario.keyPoints.join(', ')}`;
       demoList.appendChild(li);
     });
   }
@@ -1301,8 +1318,8 @@ function setupEventListeners() {
 
 // ========== Initialisation de l'application ==========
 function initApp() {
+  loadPersistedState();
   console.log('🚀 Initialisation de l\'application IA & Études');
-  
   // Configuration initiale basée sur l'URL
   const hash = window.location.hash.substring(1);
   if (hash && ['home', 'tools'].includes(hash)) {
@@ -1310,16 +1327,12 @@ function initApp() {
   } else {
     showSection('home');
   }
-
   // Rendu initial des outils
   renderTools();
-
   // Configuration des filtres
   setupFilters();
-
   // Configuration des événements
   setupEventListeners();
-
   console.log('✅ Application initialisée avec succès');
   console.log(`📊 ${appData.tools.length} outils chargés`);
 }
@@ -1361,4 +1374,20 @@ function restartYouTubeVideo(iframe) {
         const currentSrc = iframe.src;
         iframe.src = currentSrc;
     }
+}
+
+// Persistance des vues et favoris dans localStorage
+function loadPersistedState() {
+  const views = localStorage.getItem('toolViews');
+  const favorites = localStorage.getItem('toolFavorites');
+  appState.views = views ? JSON.parse(views) : {};
+  appState.favorites = favorites ? JSON.parse(favorites) : [];
+}
+
+function saveViews() {
+  localStorage.setItem('toolViews', JSON.stringify(appState.views));
+}
+
+function saveFavorites() {
+  localStorage.setItem('toolFavorites', JSON.stringify(appState.favorites));
 }

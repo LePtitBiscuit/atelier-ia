@@ -100,12 +100,12 @@
                 </div>
 
                 <div class="modal-section">
-                    <h4>📝 Points à présenter</h4>
+                    <h4>💡 Points forts de l'outil</h4>
                     <ul id="modalPresentation"></ul>
                 </div>
 
                 <div class="modal-section">
-                    <h4>🎬 Scénarios de démo</h4>
+                    <h4>🔎 Exemples d'utilisation concrets</h4>
                     <ul id="modalDemo"></ul>
                 </div>
 
@@ -140,6 +140,10 @@
                 </div>
             </div>
             <div class="modal-footer">
+                <span id="modalViews" class="badge badge--views" style="margin-right:auto"></span>
+                <button id="favoriteBtn" class="btn btn--outline" onclick="toggleFavorite()">
+                    <span id="favoriteText">❤️ Ajouter aux favoris</span>
+                </button>
                 <button class="btn btn--outline" onclick="closeModal()">Fermer</button>
                 <a id="modalLink" href="#" target="_blank" class="btn btn--primary">
                     Visiter l'outil
