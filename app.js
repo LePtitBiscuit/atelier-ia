@@ -67,7 +67,7 @@ const appData = {
         },
         {
           type: "YouTube",
-          link: "https://www.youtube.com/watch?v=w2KbwC-s7pY",
+          link: "https://www.youtube.com/watch?v=MxvWGMPJnfQ",
           description: "Tutoriel complet sur l'utilisation de ChatGPT"
         },
         {
@@ -90,8 +90,8 @@ const appData = {
         },
         {
           name: "Google Docs",
-          description: "Add-on pour utiliser ChatGPT dans Google Docs",
-          link: "https://workspace.google.com/marketplace"
+          description: "Add-ons pour utiliser ChatGPT dans Google Docs/Sheets/Forms/etc.",
+          link: "https://workspace.google.com/marketplace/search/chatgpt"
         }
       ]
     },
@@ -144,13 +144,8 @@ const appData = {
       ],
       learningResources: [
         {
-          type: "Guide officiel",
-          link: "https://www.perplexity.ai/guide",
-          description: "Guide d'utilisation de Perplexity"
-        },
-        {
           type: "YouTube",
-          link: "https://www.youtube.com/watch?v=example",
+          link: "https://www.youtube.com/watch?v=pzpwKiguRmU",
           description: "Tutoriel sur l'utilisation de Perplexity pour la recherche"
         }
       ],
@@ -159,13 +154,6 @@ const appData = {
         "Vérifier les dates des sources citées",
         "Croiser les informations entre plusieurs sources",
         "Utiliser les filtres de recherche pour affiner les résultats"
-      ],
-      integrations: [
-        {
-          name: "Browser Extension",
-          description: "Extension pour accéder rapidement à Perplexity depuis n'importe quelle page web",
-          link: "https://www.perplexity.ai/extension"
-        }
       ]
     },
     {
@@ -241,18 +229,6 @@ const appData = {
         "Personnaliser les fiches générées",
         "Utiliser les quiz pour tester sa compréhension",
         "Combiner avec d'autres méthodes de révision"
-      ],
-      integrations: [
-        {
-          name: "Google Drive",
-          description: "Import direct depuis Google Drive",
-          link: "https://www.studyfetch.com/integrations"
-        },
-        {
-          name: "OneDrive",
-          description: "Import depuis OneDrive",
-          link: "https://www.studyfetch.com/integrations"
-        }
       ]
     },
     {
@@ -313,13 +289,8 @@ const appData = {
       ],
       learningResources: [
         {
-          type: "Guide Google",
-          link: "https://notebooklm.google.com/guide",
-          description: "Guide officiel de NotebookLM"
-        },
-        {
           type: "YouTube",
-          link: "https://www.youtube.com/watch?v=example",
+          link: "https://www.youtube.com/watch?v=YmgKqTFhZ5k",
           description: "Tutoriel sur l'utilisation de NotebookLM"
         }
       ],
@@ -328,49 +299,37 @@ const appData = {
         "Utiliser les tags pour une meilleure organisation",
         "Exploiter les connexions automatiques entre les notes",
         "Personnaliser les synthèses générées"
-      ],
-      integrations: [
-        {
-          name: "Google Drive",
-          description: "Intégration native avec Google Drive",
-          link: "https://notebooklm.google.com/integrations"
-        },
-        {
-          name: "Google Docs",
-          description: "Export vers Google Docs",
-          link: "https://notebooklm.google.com/integrations"
-        }
       ]
     },
     {
       id: 5,
-      name: "SlidesAI",
-      category: "Productivité",
-      description: "Création de présentations automatiques à partir de texte",
+      name: "Lingua",
+      category: "Apprentissage & Langues",
+      description: "Assistant IA pour l'apprentissage des langues, traduction contextuelle et exercices personnalisés",
       video: {
         type: "video",
-        url: "videos/slidesai-demo.mp4",
+        url: "videos/lingua-demo.mp4",
         alt: "Démonstration de l'outil"
       },
-      useCases: ["Présentations étudiantes", "Exposés académiques", "Supports visuels"],
-      advantages: ["Création rapide", "Templates professionnels", "Export multiple"],
-      icon: "🎨",
-      link: "https://www.slidesai.io",
+      useCases: ["Apprentissage des langues", "Traduction contextuelle", "Exercices personnalisés", "Préparation aux examens de langues"],
+      advantages: ["Gratuit", "IA intégrée", "Exercices personnalisés", "Support multilingue"],
+      icon: "🗣️",
+      link: "https://lingua.com",
       presentationPoints: [
-        "Montrer la génération à partir de texte",
-        "Démontrer les différents styles disponibles",
-        "Expliquer les options d'export"
+        "Montrer l'apprentissage personnalisé",
+        "Démontrer la traduction contextuelle",
+        "Expliquer les exercices adaptatifs"
       ],
       demoScenarios: [
         {
-          title: "Création de présentation",
-          prompt: "Créer une présentation sur [sujet]",
-          keyPoints: ["Montrer la génération automatique", "Expliquer la personnalisation"]
+          title: "Apprentissage personnalisé",
+          prompt: "Créer un plan d'apprentissage personnalisé",
+          keyPoints: ["Montrer l'adaptation au niveau", "Expliquer la progression"]
         },
         {
-          title: "Modification de style",
-          prompt: "Changer le style de la présentation",
-          keyPoints: ["Montrer les différents templates", "Expliquer les options de design"]
+          title: "Traduction contextuelle",
+          prompt: "Traduire un texte avec contexte",
+          keyPoints: ["Montrer la précision contextuelle", "Expliquer les alternatives"]
         }
       ],
       faq: [
@@ -379,8 +338,8 @@ const appData = {
           answer: "Oui, vous pouvez modifier tous les éléments de la présentation après sa génération, y compris le texte, les images et le style."
         },
         {
-          question: "Quels formats d'export sont disponibles ?",
-          answer: "SlidesAI permet d'exporter en PowerPoint, PDF, et Google Slides, offrant une grande flexibilité pour le partage."
+          question: "Combien de langues sont supportées ?",
+          answer: "Lingua supporte plus de 20 langues avec des exercices adaptatifs et une traduction contextuelle précise."
         }
       ],
       difficulty: {
@@ -390,233 +349,105 @@ const appData = {
       },
       alternatives: [
         {
-          name: "Beautiful.ai",
-          comparison: "Plus de designs automatiques, moins de contrôle sur le contenu"
+          name: "Duolingo",
+          comparison: "Plus de gamification, moins d'IA personnalisée"
         },
         {
-          name: "Canva",
-          comparison: "Plus de templates, moins d'automatisation"
-        }
-      ],
-      learningResources: [
-        {
-          type: "Tutoriel",
-          link: "https://www.slidesai.io/tutorial",
-          description: "Guide de démarrage rapide"
-        },
-        {
-          type: "Blog",
-          link: "https://www.slidesai.io/blog",
-          description: "Conseils pour des présentations efficaces"
+          name: "Babbel",
+          comparison: "Plus de cours structurés, moins d'adaptation automatique"
         }
       ],
       tips: [
-        "Préparer un plan clair avant la génération",
-        "Utiliser des mots-clés pertinents",
-        "Personnaliser les templates générés",
-        "Vérifier la cohérence visuelle"
-      ],
-      integrations: [
-        {
-          name: "Google Slides",
-          description: "Export direct vers Google Slides",
-          link: "https://www.slidesai.io/integrations"
-        },
-        {
-          name: "PowerPoint",
-          description: "Export vers PowerPoint",
-          link: "https://www.slidesai.io/integrations"
-        }
+        "Définir ses objectifs d'apprentissage",
+        "Pratiquer régulièrement avec l'IA",
+        "Utiliser la traduction contextuelle",
+        "Suivre sa progression personnalisée"
       ]
     },
     {
       id: 6,
-      name: "Grammarly",
+      name: "LanguageTool",
       category: "Rédaction & Correction",
-      description: "Correction orthographique, grammaticale et amélioration du style rédactionnel",
+      description: "Correcteur orthographique et grammatical gratuit, excellent support du français et style",
       video: {
         type: "video",
-        url: "videos/grammarly-demo.mp4",
+        url: "videos/languagetool-demo.mp4",
         alt: "Démonstration de l'outil"
       },
       useCases: ["Correction de mémoires", "Amélioration du style", "Vérification orthographique"],
-      advantages: ["Correction en temps réel", "Suggestions stylistics", "Multi-plateforme"],
+      advantages: ["Gratuit", "Support multilingue", "Extensions navigateurs et suites bureautiques"],
       icon: "✏️",
-      link: "https://www.grammarly.com",
+      link: "https://languagetool.org/fr/",
       presentationPoints: [
-        "Montrer la correction en temps réel",
-        "Démontrer les suggestions de style",
-        "Expliquer l'intégration avec différents navigateurs"
+        "Montrer la correction en temps réel dans le navigateur",
+        "Démontrer les suggestions de style et de ton",
+        "Expliquer l'intégration Google Docs et Word"
       ],
       demoScenarios: [
         {
           title: "Correction de texte",
-          prompt: "Corriger un texte avec des erreurs",
-          keyPoints: ["Montrer les corrections en temps réel", "Expliquer les suggestions de style"]
+          prompt: "Corriger un texte universitaire avec des erreurs",
+          keyPoints: ["Afficher les fautes détectées", "Montrer les reformulations proposées"]
         },
         {
           title: "Amélioration de style",
-          prompt: "Améliorer le style d'un texte",
-          keyPoints: ["Montrer les suggestions d'amélioration", "Expliquer les différents niveaux de correction"]
+          prompt: "Rendre un paragraphe plus fluide et concis",
+          keyPoints: ["Mettre en avant le style", "Comparer avant/après"]
         }
       ],
       faq: [
         {
-          question: "Est-ce que Grammarly est fiable pour les textes académiques ?",
-          answer: "Grammarly est un excellent outil de base, mais il est recommandé de le compléter avec une relecture humaine pour les textes académiques importants."
+          question: "LanguageTool est-il gratuit ?",
+          answer: "Oui, LanguageTool est gratuit pour la majorité des usages. Une version premium existe pour des suggestions avancées."
         },
         {
-          question: "Comment Grammarly s'intègre-t-il avec les différents navigateurs ?",
-          answer: "Grammarly propose des extensions pour Chrome, Firefox, et Safari, permettant une correction en temps réel sur la plupart des sites web."
+          question: "Fonctionne-t-il bien en français ?",
+          answer: "Oui, le français est très bien supporté avec grammaire, orthographe et style."
         }
       ],
       difficulty: {
         level: "Débutant",
         learningTime: "10 minutes pour les bases",
-        learningCurve: "Interface très intuitive, apprentissage des fonctionnalités avancées"
+        learningCurve: "Interface intuitive, prise en main rapide"
       },
       alternatives: [
         {
-          name: "LanguageTool",
-          comparison: "Plus de langues supportées, moins de suggestions de style"
+          name: "Antidote",
+          comparison: "Plus de ressources linguistiques, mais payant"
         },
         {
           name: "ProWritingAid",
-          comparison: "Plus d'analyses détaillées, interface moins intuitive"
+          comparison: "Analyses détaillées, interface en anglais"
         }
       ],
       learningResources: [
         {
           type: "Guide",
-          link: "https://www.grammarly.com/guide",
-          description: "Guide d'utilisation de Grammarly"
+          link: "https://dev.languagetool.org",
+          description: "Guide et documentation LanguageTool"
         },
-        {
-          type: "Blog",
-          link: "https://www.grammarly.com/blog",
-          description: "Conseils d'écriture et astuces"
-        }
       ],
       tips: [
-        "Configurer le niveau de correction selon le type de texte",
-        "Utiliser le mode académique pour les travaux universitaires",
-        "Personnaliser le dictionnaire avec des termes spécifiques",
-        "Vérifier les suggestions de style"
-      ],
-      integrations: [
-        {
-          name: "Microsoft Word",
-          description: "Add-in pour Word",
-          link: "https://www.grammarly.com/office-addin"
-        },
-        {
-          name: "Google Docs",
-          description: "Extension pour Google Docs",
-          link: "https://www.grammarly.com/docs"
-        }
+        "Activer l'extension navigateur pour corriger partout",
+        "Choisir la variante de français (FR/CA/BE)",
+        "Utiliser le mode formel selon le contexte",
+        "Relire malgré tout les textes importants"
       ]
     },
     {
       id: 7,
-      name: "Otter.ai",
-      category: "Productivité",
-      description: "Transcription automatique de cours et conférences",
-      video: {
-        type: "video",
-        url: "videos/otter-demo.mp4",
-        alt: "Démonstration de l'outil"
-      },
-      useCases: ["Transcription de cours", "Prise de notes automatique", "Archivage audio"],
-      advantages: ["Reconnaissance vocale précise", "Partage facile", "Recherche dans les transcriptions"],
-      icon: "🎙️",
-      link: "https://otter.ai",
-      presentationPoints: [
-        "Montrer la transcription en temps réel",
-        "Démontrer la recherche dans les transcriptions",
-        "Expliquer les options de partage"
-      ],
-      demoScenarios: [
-        {
-          title: "Transcription en direct",
-          prompt: "Transcrire un cours en direct",
-          keyPoints: ["Montrer la transcription en temps réel", "Expliquer la précision"]
-        },
-        {
-          title: "Recherche dans les transcriptions",
-          prompt: "Rechercher un terme dans les transcriptions",
-          keyPoints: ["Montrer la recherche", "Expliquer la navigation"]
-        }
-      ],
-      faq: [
-        {
-          question: "Est-ce que la transcription est précise en français ?",
-          answer: "Otter.ai offre une bonne précision en français, mais la qualité peut varier selon l'accent et le bruit ambiant."
-        },
-        {
-          question: "Peut-on éditer les transcriptions ?",
-          answer: "Oui, vous pouvez éditer les transcriptions manuellement pour corriger les erreurs ou ajouter des notes."
-        }
-      ],
-      difficulty: {
-        level: "Débutant",
-        learningTime: "15 minutes pour les bases",
-        learningCurve: "Interface simple, focus sur la qualité audio"
-      },
-      alternatives: [
-        {
-          name: "Rev",
-          comparison: "Plus précis, service payant par minute"
-        },
-        {
-          name: "Descript",
-          description: "Plus de fonctionnalités d'édition, moins de transcription en direct"
-        }
-      ],
-      learningResources: [
-        {
-          type: "Guide",
-          link: "https://otter.ai/guide",
-          description: "Guide d'utilisation d'Otter.ai"
-        },
-        {
-          type: "YouTube",
-          link: "https://www.youtube.com/watch?v=example",
-          description: "Tutoriel sur l'utilisation d'Otter.ai"
-        }
-      ],
-      tips: [
-        "Utiliser un microphone de qualité",
-        "Réduire le bruit ambiant",
-        "Parler clairement et à un rythme modéré",
-        "Vérifier et corriger les transcriptions"
-      ],
-      integrations: [
-        {
-          name: "Zoom",
-          description: "Intégration avec Zoom pour la transcription automatique",
-          link: "https://otter.ai/integrations"
-        },
-        {
-          name: "Google Meet",
-          description: "Intégration avec Google Meet",
-          link: "https://otter.ai/integrations"
-        }
-      ]
-    },
-    {
-      id: 8,
-      name: "PDFgear",
+      name: "ChatPDF",
       category: "Recherche & Documentation", 
       description: "Chatbot IA pour résumer et analyser des documents PDF",
       video: {
         type: "video",
-        url: "videos/pdfgear-demo.mp4",
+        url: "videos/chatpdf-demo.mp4",
         alt: "Démonstration de l'outil"
       },
       useCases: ["Résumé d'articles scientifiques", "Analyse de documents longs", "Questions sur le contenu"],
       advantages: ["Analyse de PDF", "Résumés intelligents", "Questions-réponses"],
       icon: "📄",
-      link: "https://www.pdfgear.com",
+      link: "https://www.chatpdf.com",
       presentationPoints: [
         "Montrer l'analyse de PDF",
         "Démontrer les résumés automatiques",
@@ -637,7 +468,7 @@ const appData = {
       faq: [
         {
           question: "Quels types de PDF peuvent être analysés ?",
-          answer: "PDFgear peut analyser la plupart des PDF, mais la qualité de l'analyse dépend de la clarté du texte et de la structure du document."
+          answer: "ChatPDF peut analyser la plupart des PDF, mais la qualité de l'analyse dépend de la clarté du texte et de la structure du document."
         },
         {
           question: "Est-ce que les résumés sont fiables ?",
@@ -659,39 +490,15 @@ const appData = {
           comparison: "Similaire, interface différente"
         }
       ],
-      learningResources: [
-        {
-          type: "Guide",
-          link: "https://www.pdfgear.com/guide",
-          description: "Guide d'utilisation de PDFgear"
-        },
-        {
-          type: "Blog",
-          link: "https://www.pdfgear.com/blog",
-          description: "Conseils pour l'analyse de PDF"
-        }
-      ],
       tips: [
         "Utiliser des PDF de bonne qualité",
         "Vérifier les résumés générés",
         "Poser des questions précises",
         "Utiliser les fonctionnalités de recherche"
-      ],
-      integrations: [
-        {
-          name: "Google Drive",
-          description: "Import depuis Google Drive",
-          link: "https://www.pdfgear.com/integrations"
-        },
-        {
-          name: "Dropbox",
-          description: "Import depuis Dropbox",
-          link: "https://www.pdfgear.com/integrations"
-        }
       ]
     },
     {
-      id: 9,
+      id: 8,
       name: "WolframAlpha",
       category: "Outils Spécialisés",
       description: "Résolution de problèmes mathématiques et scientifiques",
@@ -749,7 +556,7 @@ const appData = {
       learningResources: [
         {
           type: "Guide",
-          link: "https://www.wolframalpha.com/guide",
+          link: "https://www.wolframalpha.com/tour",
           description: "Guide d'utilisation de WolframAlpha"
         },
         {
@@ -764,21 +571,9 @@ const appData = {
         "Exploiter les visualisations",
         "Vérifier les étapes de résolution"
       ],
-      integrations: [
-        {
-          name: "Mathematica",
-          description: "Intégration avec Mathematica",
-          link: "https://www.wolframalpha.com/integrations"
-        },
-        {
-          name: "API",
-          description: "API pour intégration personnalisée",
-          link: "https://www.wolframalpha.com/api"
-        }
-      ]
     },
     {
-      id: 10,
+      id: 9,
       name: "DeepL",
       category: "Outils Spécialisés",
       description: "Traduction de haute qualité en 29 langues",
@@ -835,11 +630,6 @@ const appData = {
       ],
       learningResources: [
         {
-          type: "Guide",
-          link: "https://www.deepl.com/guide",
-          description: "Guide d'utilisation de DeepL"
-        },
-        {
           type: "Blog",
           link: "https://www.deepl.com/blog",
           description: "Conseils de traduction"
@@ -852,11 +642,6 @@ const appData = {
         "Traduire par paragraphes pour plus de cohérence"
       ],
       integrations: [
-        {
-          name: "API",
-          description: "API pour intégration personnalisée",
-          link: "https://www.deepl.com/api"
-        },
         {
           name: "Desktop App",
           description: "Application de bureau pour traductions rapides",
@@ -1130,16 +915,20 @@ function openToolModal(tool) {
 
   // Ressources d'apprentissage
   const resourcesList = document.getElementById('modalLearningResources');
-  if (resourcesList && tool.learningResources) {
-    resourcesList.innerHTML = '';
-    tool.learningResources.forEach(resource => {
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <strong>${resource.type}:</strong> 
-        <a href="${resource.link}" target="_blank">${resource.description}</a>
-      `;
-      resourcesList.appendChild(li);
-    });
+  if (resourcesList) {
+    if (tool.learningResources && tool.learningResources.length) {
+      resourcesList.innerHTML = '';
+      tool.learningResources.forEach(resource => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <strong>${resource.type}:</strong> 
+          <a href="${resource.link}" target="_blank">${resource.description}</a>
+        `;
+        resourcesList.appendChild(li);
+      });
+    } else {
+      resourcesList.innerHTML = '<li>Désolé, nous n\'avons pas trouvé de ressources pour cet outil.</li>';
+    }
   }
 
   // Conseils d'utilisation
@@ -1155,17 +944,21 @@ function openToolModal(tool) {
 
   // Intégrations
   const integrationsList = document.getElementById('modalIntegrations');
-  if (integrationsList && tool.integrations) {
-    integrationsList.innerHTML = '';
-    tool.integrations.forEach(integration => {
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <strong>${integration.name}:</strong> 
-        ${integration.description}
-        <a href="${integration.link}" target="_blank">Voir l'extension</a>
-      `;
-      integrationsList.appendChild(li);
-    });
+  if (integrationsList) {
+    if (tool.integrations && tool.integrations.length) {
+      integrationsList.innerHTML = '';
+      tool.integrations.forEach(integration => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <strong>${integration.name}:</strong> 
+          ${integration.description}
+          <a href="${integration.link}" target="_blank">Voir l'extension</a>
+        `;
+        integrationsList.appendChild(li);
+      });
+    } else {
+      integrationsList.innerHTML = '<li>Désolé, nous n\'avons pas trouvé d\'intégrations pour cet outil.</li>';
+    }
   }
 
   // Afficher le modal
